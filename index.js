@@ -24,9 +24,9 @@ function driversByName(driver){
     )
 }
 
-function totalRevenue(driver){
-    return [...driver].map(function(obj){return obj['revenue']}).reduce((accumlator, currentValue)  => {return accumlator + currentValue;},0);
-}
+const totalRevenue = function (drivers) {
+    return drivers.reduce(function (total, currentDriver) { return currentDriver.revenue + total;}, 0);
+  };
 
 function averageRevenue(driver){
     return totalRevenue(driver) / driver.length
